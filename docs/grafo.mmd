@@ -1,0 +1,27 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	reformulador(reformulador)
+	supervisor(supervisor)
+	clima(clima)
+	presupuesto(presupuesto)
+	reservas(reservas)
+	sintetizador(sintetizador)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> reformulador;
+	clima --> supervisor;
+	presupuesto --> supervisor;
+	reformulador --> supervisor;
+	reservas --> supervisor;
+	supervisor -.-> clima;
+	supervisor -.-> presupuesto;
+	supervisor -.-> reservas;
+	supervisor -. &nbsp;fin&nbsp; .-> sintetizador;
+	sintetizador --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
